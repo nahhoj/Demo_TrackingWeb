@@ -1,0 +1,110 @@
+<mvc:View
+	controllerName="com.co.johan.maven.openui5.controller.App"
+	xmlns="sap.m" xmlns:johan="com.co.johan.maven.openui5.control"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m">
+	<Shell>
+		<App id="App">
+			<pages>
+				<Page title="{client>/name}">
+					<headerContent>
+						<Button type="Accept" text="Log out" press="onLogout" />
+					</headerContent>
+					<content>
+						<johan:GoogleMaps id="map"
+							key="AIzaSyBMLiRZg-wT9j2hg2lQwEYhD8CpgNgPus8" height="50%"
+							width="100%" afterloadMap="loadModels" />
+						<Table 	id="idProductsTable" 
+								noDataText="No Data"
+								items="{
+									path: 'events>/'
+								}"
+              					growingThreshold="3"
+              					growing="true">
+		         			<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="Filters" level="H2" width="50px" />										
+										<ComboBox id="cbUnit"  items="{
+														path: 'units>/',
+														sorter: { path: 'text' }
+													}" width="15%" placeholder="Select a unit" >											
+											<core:Item key="{units>IdUnit}" text="{units>IdUnit}" />
+										</ComboBox>
+										<DateTimeInput
+											id="dtStart"
+											type="DateTime"
+											placeholder="Enter start date"
+											width="15%" />
+										<DateTimeInput
+											id="dtEnd"
+											type="DateTime"
+											placeholder="Enter end date" 
+											width="15%" />
+										<Input id="iSpeed" placeholder="Enter speed" type="Number" width="15%" />
+										<ComboBox id="cbEvent" width="15%" placeholder="Select an event">
+											
+										</ComboBox>			
+										<Button id="bSerach" type="Accept" text="Search" press="eventsUnit" />		
+										<Button id="bdrawPath" type="Accept" text="Draw Path" press="drawPath" />													
+										<Button id="breloadh" type="Accept" text="Clear  map" press="reloadMap" />
+									</content>
+								</OverflowToolbar>
+							</headerToolbar>
+			                <items>
+			                    <ColumnListItem type="Active" press="onPutOnMap">
+			                        <cells>
+			                           <Text text="{events>IdEvent}"></Text>
+			                           <Text text="{events>IdUnit}"></Text>
+			                           <Text text="{events>Lat}"></Text>
+			                           <Text text="{events>Lon}"></Text>
+			                           <Text text="{events>Speed}"></Text>
+			                           <Text text="{events>dateTime}"></Text>
+			                           <Text text="{events>Event}"></Text>
+			                        </cells>
+			                    </ColumnListItem>
+			                </items>
+			                <columns>
+			                    <Column demandPopin="true">
+			                        <header>
+			                            <Text text="IdEvent"></Text>
+			                        </header>
+			                    </Column>
+			                    <Column demandPopin="true">
+			                        <header>
+			                            <Text text="IdUnit"></Text>
+			                        </header>
+			                    </Column>
+			                    <Column demandPopin="true">
+			                        <header>
+			                            <Text text="Lattitude"></Text>
+			                        </header>
+			                    </Column>
+			                    <Column demandPopin="true">
+			                        <header>
+			                            <Text text="Longitude"></Text>
+			                        </header>
+			                    </Column>
+			                    <Column demandPopin="true">
+			                        <header>
+			                            <Text text="Speed"></Text>
+			                        </header>
+			                    </Column>
+			                    <Column hAlign="Right">
+			                        <header>
+			                            <Text text="DateTime" ></Text>
+			                        </header>
+			                    </Column>
+			                     <Column hAlign="Right">
+			                        <header>
+			                            <Text text="Event"></Text>
+			                        </header>
+			                    </Column>
+			                </columns>
+			            </Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

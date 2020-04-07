@@ -1,0 +1,9 @@
+com\co\johan\server\java\rest\Client.class
+com\co\johan\server\java\rest\Unit.class
+Main.class
+com\co\johan\server\java\rest\EventDataType.class
+com\co\johan\server\java\rest\Event.class
+com\co\johan\server\java\rest\ClientDataType.class
+com\co\johan\server\java\sql\Reads.class
+com\co\johan\server\java\rest\UnitDataType.class
+com\co\johan\server\java\rest\LastEvent.class

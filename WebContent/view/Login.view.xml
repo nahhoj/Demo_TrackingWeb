@@ -1,0 +1,51 @@
+<mvc:View
+	controllerName="com.co.johan.maven.openui5.controller.Login"
+	xmlns="sap.m" xmlns:johan="com.co.johan.maven.openui5.control"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m">
+	<Shell>
+		<App id="Login">
+			<pages>
+				<Page>
+					<content>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormDisplay354" editable="false">
+			<f:title>
+				<core:Title text="Login Page" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="3"
+					labelSpanL="3" labelSpanM="3" labelSpanS="12"
+					adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+					emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1"
+					columnsM="1" singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Username">
+							<f:fields>
+								<Input value="demo@johan.com.co" placeholder="Please type your username" id="username"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Password">
+							<f:fields>
+								<Input value="123456" placeholder="Please type your password" submit="onLogin" type="Password" id="password"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement>
+							<f:fields>
+								<Button icon="sap-icon://visits" type="Transparent" press="onLogin" ariaLabelledBy="editButtonLabel"/>
+							</f:fields>
+						</f:FormElement>					
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+	</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
